@@ -1,6 +1,6 @@
 # IEC 61499 分布式工业控制系统
 
-[![CI](https://github.com/lwj15089590118/IEC61499-Distributed-Industrial-Control-System/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lwj15089590118/IEC61499-Distributed-Industrial-Control-System/actions/workflows/ci.yml)
+[![CI](https://github.com/lian-automation/IEC61499-Distributed-Industrial-Control-System/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/lian-automation/IEC61499-Distributed-Industrial-Control-System/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
@@ -264,4 +264,4 @@ entry 动作；无匹配迁移则状态保持（事件被忽略，符合标准�
 
 ## 10. 许可证
 
-本项目以 [MIT License](LICENSE) 开源 · Copyright (c) 2026 lwj15089590118
+本项目以 [MIT License](LICENSE) 开源 · Copyright (c) 2026 lian-automation
