@@ -13,7 +13,6 @@ failover 集成回归测试（真实拉起五节点子进程，纯共享内存�
 
 from __future__ import annotations
 
-import copy
 import os
 import subprocess
 import sys

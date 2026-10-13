@@ -19,13 +19,12 @@
 from __future__ import annotations
 
 import logging
-import math
 import random
 import sys
 import threading
 import time
 from pathlib import Path
-from typing import Any, Dict, Optional
+from typing import Dict, Optional
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:

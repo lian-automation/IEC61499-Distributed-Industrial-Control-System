@@ -23,7 +23,6 @@ from __future__ import annotations
 import heapq
 import itertools
 import logging
-import random
 import sys
 import threading
 import time
@@ -459,7 +458,6 @@ class HealthMonitorFB(FunctionBlock):
         now = time.time()
         timeout = float(self.di["timeout_ms"]) / 1000.0
         table: Dict = self.state["nodes"]
-        online = [n for n, r in table.items() if r["online"]]
         offline = []
         for node, rec in table.items():
             if rec["online"] and now - rec["last_seen"] > timeout:
@@ -727,6 +725,12 @@ def main() -> None:
     stop_evt = threading.Event()
     for t in spawn_cycle_threads(rt, stop_evt):
         t.start()
+
+    # 让位检测需要 task_q / failover_fb 两个功能块实例（由 build_runtime 装配后
+    # 挂在 runtime 上）；此处与 spawn_cycle_threads 同口径取用，
+    # 否则检测到新领导者时会抛 NameError 使主控进程崩溃。
+    task_q = rt._task_queue_fb
+    failover_fb = rt._failover_fb
 
     try:
         while not stop_evt.is_set():

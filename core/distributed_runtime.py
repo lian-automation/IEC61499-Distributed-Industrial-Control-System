@@ -1176,7 +1176,8 @@ class DistributedRuntime:
                               name="hb", daemon=True)
         t2 = threading.Thread(target=self._fault_poll_loop,
                               name="fault-poll", daemon=True)
-        t1.start(); t2.start()
+        t1.start()
+        t2.start()
         self._threads.extend([t1, t2])
         logger.info("[%s] 运行时已启动 role=%s ip=%s 心跳间隔=%.0fms",
                     self.node_id, self.role, self.ip,
